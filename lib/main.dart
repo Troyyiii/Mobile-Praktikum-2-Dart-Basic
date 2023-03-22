@@ -50,6 +50,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String _text = "";
+  String textGanjil = "";
   String textGenap = "";
   String textPrima = "";
   int prima = 1;
@@ -71,6 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
         _text = "Genap";
       }else{
         _text = "Ganjil";
+      }
+
+      textGanjil = "Ganjil: ";
+      for(int i=0; i<=_counter; i++){
+        if(i%2 != 0){
+          textGanjil += '${i}, ';
+        }
       }
 
       textGenap = "Genap : ";
@@ -145,6 +153,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               _text,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              textGanjil,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             Text(
